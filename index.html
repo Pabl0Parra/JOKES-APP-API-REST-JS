@@ -1,37 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jokes App</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./main.js" defer ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./main.js" defer></script>
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  
-    </head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <div class="wrapper">
-        <!-- navbar -->
-        <nav class="navbar navbar-light bg-light sticky-top justify-content-start p-4">
-            <div class="container-fluid">
-              <span class="navbar-brand mb-0 h1">Weather API</span>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="card text-center mt-5 p-4" shadow>
-                <div class="card-body">
-                  <h5 class="card-title m-auto w-auto">Ready to laugh? 🤣</h5>
-                  <p class="card-text m-5" id="jokesOutput"></p>
-                  <div box-shadow>
-                  <a href="#" class="btn btn-emoji pb-5" onclick="setScore(1)">😓</a></div>
-                  <a href="#" class="btn btn-emoji pb-5" onclick="setScore(2)" shadow>😐</a>
-                  <a href="#" class="btn btn-emoji pb-5" onclick="setScore(3)" shadow>😆</a><br>
-                  <a href="#" class="btn btn-primary" onclick="getJokes()" shadow>Show me a joke</a>
-                </div>                
-            </div>
+      <!-- navbar -->
+      <nav
+        class="navbar navbar-light bg-light sticky-top justify-content-start p-4"
+      >
+        <div class="container" id="weather">
+          <span class="navbar-brand mb-0 h1">Weather API</span>
         </div>
+      </nav>
+      <div class="container">
+        <div class="card text-center mt-5 p-4" shadow>
+          <div class="card-body">
+            <h1 class="card-title m-auto w-auto">Ready to laugh? 🤣</h1>
+            <p class="card-text m-5" id="jokesOutput"></p>
+            <div class="score-btn">
+              <a
+                href="#"
+                class="btn btn-emoji pb-5"
+                id="score_rating"
+                onclick="setScore(1)"
+                value="1"
+                >😓</a
+              >
+              <a
+                href="#"
+                class="btn btn-emoji pb-5"
+                id="score_rating"
+                onclick="setScore(2)"
+                shadow
+                value="2"
+                >😐</a
+              >
+              <a
+                href="#"
+                class="btn btn-emoji pb-5"
+                id="score_rating"
+                onclick="setScore(3)"
+                shadow
+                value="3"
+                >😆</a
+              >
+            </div>
+            <br />
+            <div class="main-btn">
+              <a href="#" class="btn btn-primary" onclick="getJokes()" shadow
+                >Show me a joke</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
