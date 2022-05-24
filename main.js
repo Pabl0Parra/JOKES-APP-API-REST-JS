@@ -35,15 +35,40 @@ function setScore(value) {
 }
 
 //Exercise 4
-const weatherResponse = document.querySelector("#weather");
 
-async function getLocalWeather() {
-  const response = await fetch(
-    "https://api.openweathermap.org/data/2.5/weather?q=barcelona&appid=3979566bab46a26b742f8eacf6ddcaca&lang=eng&units=metric"
-  );
-  const weather = await response.json();
-  console.log(`weather:`, weather);
-  weatherResponse.innerHTML = weather.temp;
-  return weather;
+// -- Fetch API version --
+
+// fetch the current weather in BCN
+function weatherBalloon(cityID) {
+  let key = "3979566bab46a26b742f8eacf6ddcaca";
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?id=" +
+      cityID +
+      "&appid=" +
+      key
+  )
+    .then((resp) => {
+      return resp.json(); // Convert data to json
+    })
+    .then((data) => {
+      //console.log(data);
+      drawWeather(data); // Call drawWeather
+    })
+    .catch(() => {
+      // catch any errors
+    });
 }
-getLocalWeather();
+
+window.onload = () => {
+  // The parameter corresponds to Bcn_id
+  weatherBalloon(3128760);
+};
+
+// paint the weather in navbar
+function drawWeather(d) {
+  let celcius = Math.round(parseFloat(d.main.temp) - 273.15);
+
+  document.getElementById("description").innerHTML = d.weather[0].description;
+  document.getElementById("temp").innerHTML = celcius + "&deg;";
+  document.getElementById("location").innerHTML = d.name;
+}
