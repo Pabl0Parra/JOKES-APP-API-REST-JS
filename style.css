@@ -14,12 +14,47 @@ body {
   );
 }
 
+#temp {
+  font-size: xx-large;
+}
+
+#bg-weather.sunny {
+  background-image: linear-gradient(
+    to right top,
+    #ff4e50,
+    #ff713e,
+    #ff932b,
+    #ffb41d,
+    #f9d423
+  );
+}
+#bg-weather.cloudy {
+  background-image: linear-gradient(
+    to right top,
+    #63747c,
+    #71858e,
+    #7f96a0,
+    #8da8b2,
+    #9bbac5
+  );
+}
+#bg-weather.rainy {
+  background-image: linear-gradient(
+    to right top,
+    #637c7b,
+    #718e8c,
+    #7ea09e,
+    #8db2b0,
+    #9bc5c3
+  );
+}
+
 #container {
   width: min(100%, 1000px);
   margin: 100px auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .card {

@@ -67,8 +67,21 @@ window.onload = () => {
 // paint the weather in navbar
 function drawWeather(d) {
   let celcius = Math.round(parseFloat(d.main.temp) - 273.15);
+  // let icons =
+  //   "http://openweathermap.org/img/wn/" +
+  //   resWeatherData.weather[0].icon +
+  //   "@2x.png";
 
   document.getElementById("description").innerHTML = d.weather[0].description;
   document.getElementById("temp").innerHTML = celcius + "&deg;";
   document.getElementById("location").innerHTML = d.name;
+  //document.getElementById("weather_icon").innerHTML = `<img src="${icons}">`;
+
+  // if (description.indexOf("rain") > 0) {
+  //   document.getElementById("navbar").className = "rainy";
+  // } else if (description.indexOf("cloud") > 0) {
+  //   document.getElementById("navbar").className = "cloudy";
+  // } else if (description.indexOf("sunny") > 0) {
+  //   document.getElementById("navbar").className = "sunny";
+  // }
 }
