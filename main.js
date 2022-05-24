@@ -36,13 +36,14 @@ function setScore(value) {
 
 //Exercise 4
 const weatherResponse = document.querySelector("#weather");
-const weatherAPIKey = "f2993b367d3d44028f4152530222305";
 
 async function getLocalWeather() {
   const response = await fetch(
-    "http://api.weatherapi.com/v1/current.json?key=f2993b367d3d44028f4152530222305 &q=08930&aqi=no" +
-      weatherAPIKey
+    "https://api.openweathermap.org/data/2.5/weather?q=barcelona&appid=3979566bab46a26b742f8eacf6ddcaca&lang=eng&units=metric"
   );
   const weather = await response.json();
+  console.log(`weather:`, weather);
+  weatherResponse.innerHTML = weather.temp;
   return weather;
 }
+getLocalWeather();

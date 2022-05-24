@@ -1,7 +1,11 @@
+/* Font-awesome Icons */
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+/* Font family */
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 
 body {
-  background: rgb(84, 75, 227);
+  font-family: "Caveat", sans-serif;
+
   background: linear-gradient(
     90deg,
     rgba(84, 75, 227, 1) 0%,
