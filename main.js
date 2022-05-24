@@ -14,35 +14,24 @@ async function getJokes() {
   console.log(`Ex_1_joke:`, data);
   // Exercise 2
   HTMLResponse.innerHTML = data.joke;
+  // Exercise 3
+  fetchedJoke = data.joke;
 }
-// getJokes();
 
-// Exercise 3
 const reportJokes = [];
-let userRating = 0;
-let joke = "";
+let fetchedJoke = "";
 
 function setScore(value) {
   const currentDate = new Date();
   let currentDateISO = currentDate.toISOString();
 
-  if (value === 1) {
-    userRating = 1;
-  }
-  if (value === 2) {
-    userRating = 2;
-  }
-  if (value === 3) {
-    userRating = 3;
-  }
-  // Need to figure a way to insert current joke into objects array
   reportJokes.push({
-    joke: joke.joke,
+    joke: fetchedJoke,
     date: currentDateISO,
-    score: userRating,
+    score: value,
   });
   console.log("Ex_3: array with scores: ", reportJokes);
-  return userRating;
+  return value;
 }
 
 //Exercise 4
