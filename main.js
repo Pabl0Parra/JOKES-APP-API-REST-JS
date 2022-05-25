@@ -40,7 +40,7 @@ function setScore(value) {
 let currentWeather = [];
 // fetch the current weather in BCN
 function weatherBalloon(cityID) {
-  let key = "d8ec460060f73b8a21776452facfeeec";
+  let key = "8ef5c06696897286002b8e4054506ea8";
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?id=" +
       cityID +
@@ -80,20 +80,38 @@ function drawWeather(d) {
 
   // Exercise 5
 
-  const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
+  let norrisJoke = [
+    {
+      icon_url: "",
+      id: "",
+      value: "",
+      url: "",
+    },
+  ];
+}
+const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
 
-  async function getChuckJokes() {
-    const response = await fetch(ChuckAPIUrl, {
-      headers: {
-        Accept: "application/json",
-      },
-    });
-    const ChuckData = await response.json();
+async function getChuckJokes() {
+  const response = await fetch(ChuckAPIUrl, {
+    headers: {
+      Accept: "application/json",
+    },
+  });
+  norrisJoke = await response.json();
 
-    console.log(`Ex_5_joke:`, ChuckData);
+  //console.log(`Ex_5_joke:`, norrisJoke);
 
-    HTMLResponse.innerHTML = ChuckData.joke;
+  HTMLResponse.innerHTML = norrisJoke.value;
 
-    fetchedChuckJoke = ChuckData.joke;
-  }
+  fetchedChuckJoke = norrisJoke.value;
+}
+//getChuckJokes();
+// choose a random joke between both API´s
+function getRandomJoke() {
+  // [] w/both functions that can be called
+  const functionsArray = [getJokes, getChuckJokes];
+  console.log(functionsArray.length);
+  let i = Math.floor(Math.random() * functionsArray.length);
+
+  functionsArray[i]();
 }
