@@ -34,6 +34,8 @@ function setScore(value) {
   return value;
 }
 
+// -- LEVEL 2 --
+
 //Exercise 4
 
 // -- Fetch API version --
@@ -55,8 +57,8 @@ function weatherBalloon(cityID) {
       currentWeather = data;
       drawWeather(data); // Call drawWeather
     })
-    .catch(() => {
-      // catch any errors
+    .catch((e) => {
+      console.log(e); // catch any errors
     });
 }
 
@@ -65,30 +67,25 @@ window.onload = () => {
   weatherBalloon(3128760);
 };
 
-// paint the weather in navbar
+// paint the weather in header
 function drawWeather(d) {
+  // display temperature in right format
   let celcius = Math.round(parseFloat(d.main.temp) - 273.15);
   let icons =
     "http://openweathermap.org/img/wn/" +
     currentWeather.weather[0].icon +
     "@2x.png";
 
-  // document.getElementById("description").innerHTML = d.weather[0].description;
+  // paints current temperature
   document.getElementById("temp").innerHTML = celcius + "&deg;" + " " + " ";
+  // paints city name
   document.getElementById("location").innerHTML = d.name;
+  // paints current weather icon
   document.getElementById("weather_icon").innerHTML = `<img src="${icons}">`;
-
-  // Exercise 5
-
-  let norrisJoke = [
-    {
-      icon_url: "",
-      id: "",
-      value: "",
-      url: "",
-    },
-  ];
 }
+
+// Exercise 5
+
 const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
 
 async function getChuckJokes() {
