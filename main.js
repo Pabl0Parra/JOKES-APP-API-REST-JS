@@ -1,9 +1,11 @@
 const API_URL = "https://icanhazdadjoke.com/";
-
+// where the jokes are going to be display
 const HTMLResponse = document.querySelector("#jokesOutput");
+// empty variable to later store the joke
 let fetchedJoke = "";
 
 async function getJokes() {
+  // API call
   const response = await fetch(API_URL, {
     headers: {
       Accept: "application/json",
@@ -11,20 +13,22 @@ async function getJokes() {
   });
   const data = await response.json();
 
-  // Exercise 1
+  // -- Exercise 1 --
   console.log(`Ex_1_joke:`, data);
-  // Exercise 2
+  // -- Exercise 2 --
   HTMLResponse.innerHTML = data.joke;
-  // Exercise 3
+  // variable to store the joke to be used in setScore()
   fetchedJoke = data.joke;
 }
 
+// -- Exercise 3 --
 const reportJokes = [];
 
 function setScore(value) {
   const currentDate = new Date();
+  // convert date to ISO standards
   let currentDateISO = currentDate.toISOString();
-
+  // push the following key/values into array
   reportJokes.push({
     joke: fetchedJoke,
     date: currentDateISO,
@@ -42,7 +46,9 @@ function setScore(value) {
 let currentWeather = [];
 // fetch the current weather in BCN
 function weatherBalloon(cityID) {
+  // open weather key
   let key = "8ef5c06696897286002b8e4054506ea8";
+  // API call
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?id=" +
       cityID +
@@ -71,16 +77,17 @@ window.onload = () => {
 function drawWeather(d) {
   // display temperature in right format
   let celcius = Math.round(parseFloat(d.main.temp) - 273.15);
+  // get right icon from API
   let icons =
     "http://openweathermap.org/img/wn/" +
     currentWeather.weather[0].icon +
     "@2x.png";
 
-  // paints current temperature
+  // paint current temperature
   document.getElementById("temp").innerHTML = celcius + "&deg;" + " " + " ";
-  // paints city name
+  // paint city name
   document.getElementById("location").innerHTML = d.name;
-  // paints current weather icon
+  // paint current weather icon
   document.getElementById("weather_icon").innerHTML = `<img src="${icons}">`;
 }
 
@@ -96,13 +103,11 @@ async function getChuckJokes() {
   });
   norrisJoke = await response.json();
 
-  //console.log(`Ex_5_joke:`, norrisJoke);
-
   HTMLResponse.innerHTML = norrisJoke.value;
 
   fetchedChuckJoke = norrisJoke.value;
 }
-//getChuckJokes();
+
 // choose a random joke between both API´s
 function getRandomJoke() {
   // [] w/both functions that can be called
