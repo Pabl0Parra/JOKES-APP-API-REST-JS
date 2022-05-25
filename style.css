@@ -18,7 +18,7 @@ body {
   font-size: xx-large;
 }
 
-#bg-weather.sunny {
+.navbar .sunny {
   background-image: linear-gradient(
     to right top,
     #ff4e50,
@@ -28,7 +28,7 @@ body {
     #f9d423
   );
 }
-#bg-weather.cloudy {
+.navbar .cloudy {
   background-image: linear-gradient(
     to right top,
     #63747c,
@@ -38,7 +38,7 @@ body {
     #9bbac5
   );
 }
-#bg-weather.rainy {
+.navbar .rainy {
   background-image: linear-gradient(
     to right top,
     #637c7b,
@@ -69,9 +69,16 @@ body {
   background-color: #d0f4f1;
 }
 .card-text {
+  font-size: x-large;
+  font-style: italic;
   height: 20%;
   width: auto;
   text-align: center;
+}
+
+.btn {
+  outline: none;
+  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%)
 }
 
 .btn:active {
@@ -80,27 +87,27 @@ body {
   box-shadow: 0px 1px 0px 0px;
 }
 
-.social-container {
+.score-container {
   width: 100%;
   height: 20vh;
   display: grid;
   place-items: center;
 }
 
-.social-icons {
+.score-icons {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.social-icons li {
+.score-icons li {
   display: inline-block;
   margin: 0.15em;
   position: relative;
   font-size: 1.2em;
 }
 
-.social-icons i {
+.score-icons i {
   color: #fff;
   position: absolute;
   top: 21px;
@@ -108,11 +115,11 @@ body {
   transition: all 265ms ease-out;
 }
 
-.social-icons a {
+.score-icons a {
   display: inline-block;
 }
 
-.social-icons a::before {
+.score-icons a::before {
   transform: scale(1);
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
@@ -125,12 +132,12 @@ body {
   transition: all 265ms ease-out;
 }
 
-.social-icons a:hover::before {
+.score-icons a:hover::before {
   transform: scale(0);
   transition: all 265ms ease-in;
 }
 
-.social-icons a:hover i {
+.score-icons a:hover i {
   transform: scale(2);
   -ms-transform: scale(2);
   -webkit-transform: scale(2);
@@ -140,4 +147,11 @@ body {
   -webkit-text-fill-color: transparent;
   transition: all 265ms ease-in;
   background-clip: none;
+}
+
+#weather {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: antiquewhite;
 }

@@ -17,26 +17,27 @@
   </head>
   <body>
     <div class="wrapper">
-      <!-- navbar -->
-      <nav
-        class="navbar navbar-light bg-light sticky-top justify-content-start p-4"
-        id="bg-weather"
+      <!-- header -->
+      <header
+        class="navbar justify-content-start p-4"
+        
       >
         <div id="weather">
+          <div id="weather_icon"></div>
           <div id="description"></div>
-          <div id="temp"></div>
+          <div id="temp"></div><br>
           <div id="location"></div>
-          <!-- <div id="weather_icon"></div> -->
+          
         </div>
-      </nav>
+      </header>
       <div class="container">
         <div class="card text-center mt-5 p-4">
           <div class="card-body">
             <h1 class="card-title m-auto w-auto">Ready to laugh? 🤣</h1>
-            <p class="card-text m-5" id="jokesOutput"></p>
+              <p class="card-text m-5" id="jokesOutput"></p>
             <div class="score-btn">
-              <div class="social-container">
-                <ul class="social-icons">
+              <div class="score-container">
+                <ul class="score-icons">
                   <li>
                     <a href="#"
                       ><i class="fa fa-thumbs-o-down" onclick="setScore(1)"></i

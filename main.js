@@ -1,6 +1,7 @@
 const API_URL = "https://icanhazdadjoke.com/";
 
 const HTMLResponse = document.querySelector("#jokesOutput");
+let fetchedJoke = "";
 
 async function getJokes() {
   const response = await fetch(API_URL, {
@@ -19,7 +20,7 @@ async function getJokes() {
 }
 
 const reportJokes = [];
-let fetchedJoke = "";
+
 
 function setScore(value) {
   const currentDate = new Date();
@@ -37,10 +38,10 @@ function setScore(value) {
 //Exercise 4
 
 // -- Fetch API version --
-
+let currentWeather = []
 // fetch the current weather in BCN
 function weatherBalloon(cityID) {
-  let key = "3979566bab46a26b742f8eacf6ddcaca";
+  let key = "d8ec460060f73b8a21776452facfeeec";
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?id=" +
       cityID +
@@ -51,7 +52,8 @@ function weatherBalloon(cityID) {
       return resp.json(); // Convert data to json
     })
     .then((data) => {
-      //console.log(data);
+      console.log('weather array:', data);
+      currentWeather = data
       drawWeather(data); // Call drawWeather
     })
     .catch(() => {
@@ -60,28 +62,40 @@ function weatherBalloon(cityID) {
 }
 
 window.onload = () => {
-  // The parameter corresponds to Bcn_id
+  // The parameter corresponds to bcn_id
   weatherBalloon(3128760);
 };
 
 // paint the weather in navbar
 function drawWeather(d) {
   let celcius = Math.round(parseFloat(d.main.temp) - 273.15);
-  // let icons =
-  //   "http://openweathermap.org/img/wn/" +
-  //   resWeatherData.weather[0].icon +
-  //   "@2x.png";
+  let icons =
+    "http://openweathermap.org/img/wn/" +
+    currentWeather.weather[0].icon +
+    "@2x.png";
 
-  document.getElementById("description").innerHTML = d.weather[0].description;
-  document.getElementById("temp").innerHTML = celcius + "&deg;";
-  document.getElementById("location").innerHTML = d.name;
-  //document.getElementById("weather_icon").innerHTML = `<img src="${icons}">`;
+  // document.getElementById("description").innerHTML = d.weather[0].description;
+  document.getElementById("temp").innerHTML = celcius + "&deg;" + ' ' + ' ';
+  document.getElementById("location").innerHTML = d.name ;
+  document.getElementById("weather_icon").innerHTML = `<img src="${icons}">`;
 
-  // if (description.indexOf("rain") > 0) {
-  //   document.getElementById("navbar").className = "rainy";
-  // } else if (description.indexOf("cloud") > 0) {
-  //   document.getElementById("navbar").className = "cloudy";
-  // } else if (description.indexOf("sunny") > 0) {
-  //   document.getElementById("navbar").className = "sunny";
-  // }
-}
+ 
+
+// Exercise 5
+
+const ChuckAPIUrl = 'https://api.chucknorris.io/jokes/random'
+
+async function getChuckJokes() {
+  const response = await fetch(ChuckAPIUrl, {
+    headers: {
+      Accept: "application/json",
+    },
+  });
+  const ChuckData = await response.json();
+  
+  console.log(`Ex_5_joke:`, ChuckData);
+  
+  HTMLResponse.innerHTML = ChuckData.joke;
+  
+  fetchedChuckJoke = ChuckData.joke;
+}}
