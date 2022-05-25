@@ -21,7 +21,6 @@ async function getJokes() {
 
 const reportJokes = [];
 
-
 function setScore(value) {
   const currentDate = new Date();
   let currentDateISO = currentDate.toISOString();
@@ -38,7 +37,7 @@ function setScore(value) {
 //Exercise 4
 
 // -- Fetch API version --
-let currentWeather = []
+let currentWeather = [];
 // fetch the current weather in BCN
 function weatherBalloon(cityID) {
   let key = "d8ec460060f73b8a21776452facfeeec";
@@ -52,8 +51,8 @@ function weatherBalloon(cityID) {
       return resp.json(); // Convert data to json
     })
     .then((data) => {
-      console.log('weather array:', data);
-      currentWeather = data
+      console.log("weather array:", data);
+      currentWeather = data;
       drawWeather(data); // Call drawWeather
     })
     .catch(() => {
@@ -75,27 +74,26 @@ function drawWeather(d) {
     "@2x.png";
 
   // document.getElementById("description").innerHTML = d.weather[0].description;
-  document.getElementById("temp").innerHTML = celcius + "&deg;" + ' ' + ' ';
-  document.getElementById("location").innerHTML = d.name ;
+  document.getElementById("temp").innerHTML = celcius + "&deg;" + " " + " ";
+  document.getElementById("location").innerHTML = d.name;
   document.getElementById("weather_icon").innerHTML = `<img src="${icons}">`;
 
- 
+  // Exercise 5
 
-// Exercise 5
+  const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
 
-const ChuckAPIUrl = 'https://api.chucknorris.io/jokes/random'
+  async function getChuckJokes() {
+    const response = await fetch(ChuckAPIUrl, {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    const ChuckData = await response.json();
 
-async function getChuckJokes() {
-  const response = await fetch(ChuckAPIUrl, {
-    headers: {
-      Accept: "application/json",
-    },
-  });
-  const ChuckData = await response.json();
-  
-  console.log(`Ex_5_joke:`, ChuckData);
-  
-  HTMLResponse.innerHTML = ChuckData.joke;
-  
-  fetchedChuckJoke = ChuckData.joke;
-}}
+    console.log(`Ex_5_joke:`, ChuckData);
+
+    HTMLResponse.innerHTML = ChuckData.joke;
+
+    fetchedChuckJoke = ChuckData.joke;
+  }
+}

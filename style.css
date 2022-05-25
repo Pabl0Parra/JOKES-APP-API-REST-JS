@@ -78,7 +78,7 @@ body {
 
 .btn {
   outline: none;
-  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%)
+  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
 }
 
 .btn:active {
