@@ -7,7 +7,7 @@ const HTMLResponse = document.querySelector("#jokesOutput");
 let fetchedJoke = "";
 // empty [] to later push the jokes w/scores (Ex_3)
 const reportJokes = [];
-// empty [] to later 
+// empty [] to later
 let currentWeather = [];
 // Chuck's Jokes API Url
 const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
@@ -21,7 +21,6 @@ async function getJokes() {
   });
   const data = await response.json();
 
-  
   console.log(`Ex_1_joke:`, data);
   // ------------------------------- Exercise 2 --------------------------------------------------
   HTMLResponse.innerHTML = data.joke;
@@ -117,26 +116,9 @@ async function getChuckJokes() {
 function getRandomJoke() {
   // [] w/both functions that can be called
   const functionsArray = [getJokes, getChuckJokes];
-  console.log(functionsArray.length);
   let i = Math.floor(Math.random() * functionsArray.length);
 
   functionsArray[i]();
 }
-
-// ---------------------------------  LEVEL 3  ---------------------------------------------------
-
-// --------------------------------- Exercise 6 --------------------------------------------------
-
-// Switching blobs when the joke button is clicked
-let currentBlob = 1;
-function changeBackground() {
-  let blob = document.getElementById('blob');
-  blob.classList.remove('blob'+currentBlob)
-  currentBlob++
-  blob.classList.add('blob'+currentBlob);  
-  if (currentBlob == 7) {
-    blob.classList.remove('blob'+currentBlob)
-    currentBlob = 1
-    blob.classList.add('blob'+currentBlob); 
-  }
-}
+// display a random joke at start
+getRandomJoke();

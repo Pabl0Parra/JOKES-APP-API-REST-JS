@@ -17,25 +17,31 @@
   </head>
   <body>
     <div class="wrapper">
-      <div id="weather">
-        <div id="weather_icon"></div>
+      <header>
+        <div id="weather">
+          <div id="weather_icon"></div>
           <div id="description"></div>
           <div id="temp"></div>
-        <div id="location"></div>
-      </div>
-      
-      <section>            
+          <div id="location"></div>
+        </div>
+      </header>
+      <section>
         <div class="blob-container row mx-auto text-center">
-          <div id="blob" class="blob1 containerfluid row text-white">
+          <div id="blob" class="row">
             <div class="card-body">
-              <h1 class="card-title m-auto w-auto">Ready to laugh? 🤣</h1>
+              <h1 class="card-title m-auto w-auto">
+                Ready to laugh? <span class="fa fa-smile-o"></span>
+              </h1>
               <p class="card-text m-5" id="jokesOutput"></p>
               <div class="score-btn">
                 <div class="score-container">
                   <ul class="score-icons">
                     <li>
                       <a href="#"
-                        ><i class="fa fa-thumbs-o-down" onclick="setScore(1)"></i
+                        ><i
+                          class="fa fa-thumbs-o-down"
+                          onclick="setScore(1)"
+                        ></i
                       ></a>
                     </li>
                     <li>
@@ -58,7 +64,7 @@
                   class="btn btn-primary"
                   onclick="getRandomJoke()"
                   shadow
-                  >Tell me a joke</a
+                  >Next joke</a
                 >
               </div>
             </div>
