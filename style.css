@@ -35,16 +35,16 @@ section {
   flex-direction: column;
   align-items: center;
   width: 500px;
-  height: 360px;  
+  height: 360px;
 }
 
 #blob {
   top: 0px;
-  
-  background-image: url(./img/blob.svg);
-  width: 800px;
+  background-image: url(./img/MainBlob.svg);
+  width: auto;
   height: 800px;
   background-size: cover;
+  align-items: inherit;
 }
 
 .blob-container {
@@ -52,8 +52,7 @@ section {
   display: flex;
   align-items: center;
   background-image: url(./img/blob.svg);
-  background-repeat: no-repeat; 
-  
+  background-repeat: no-repeat;
 }
 
 /* .container-fluid {
@@ -74,14 +73,19 @@ section {
   border-radius: 20px;
   box-shadow: 0 8px 10px rgba(190, 190, 190, 0.605);
   background-color: #d0f4f1;
+}*/
+.card-title {
+  color: rgba(19, 19, 19, 0.704);
 }
+
 .card-text {
   font-size: x-large;
   font-style: italic;
+  color: rgba(19, 19, 19, 0.704);
   height: 20%;
-  width: auto;
+  width: 50%;
   text-align: center;
-} */
+}
 
 .btn {
   outline: none;
@@ -159,20 +163,23 @@ section {
 #weather {
   display: flex;
   align-items: center;
-  
+
   color: antiquewhite;
   padding-left: 4%;
   padding-top: 2%;
 }
 
+#location {
+  margin-left: 0.8%;
+}
 /* #blob {
   /* background-repeat: no-repeat;
   background-position: center;
   height: 100%;  */
-  /* top: 0px;
+/* top: 0px;
   position: absolute;
   /* background-image: url('/img/Vector.png'); */
-  /* width: 600px;
+/* width: 600px;
   height: 600px;
   background-size: cover;
 }
