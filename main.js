@@ -1,9 +1,17 @@
+// --------- Variables -------------
+// Jokes API Url
 const API_URL = "https://icanhazdadjoke.com/";
 // where the jokes are going to be display
 const HTMLResponse = document.querySelector("#jokesOutput");
-// empty variable to later store the joke
+// empty variable to later store the joke (Ex_3)
 let fetchedJoke = "";
-
+// empty [] to later push the jokes w/scores (Ex_3)
+const reportJokes = [];
+// empty [] to later 
+let currentWeather = [];
+// Chuck's Jokes API Url
+const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
+// ------------------------------- Exercise 1 --------------------------------------------------
 async function getJokes() {
   // API call
   const response = await fetch(API_URL, {
@@ -13,16 +21,15 @@ async function getJokes() {
   });
   const data = await response.json();
 
-  // -- Exercise 1 --
+  
   console.log(`Ex_1_joke:`, data);
-  // -- Exercise 2 --
+  // ------------------------------- Exercise 2 --------------------------------------------------
   HTMLResponse.innerHTML = data.joke;
   // variable to store the joke to be used in setScore()
   fetchedJoke = data.joke;
 }
 
-// -- Exercise 3 --
-const reportJokes = [];
+// --------------------------------- Exercise 3 --------------------------------------------------
 
 function setScore(value) {
   const currentDate = new Date();
@@ -38,12 +45,12 @@ function setScore(value) {
   return value;
 }
 
-// -- LEVEL 2 --
+// ---------------------------------- LEVEL 2 ----------------------------------------------------
 
-//Exercise 4
+// --------------------------------- Exercise 4 --------------------------------------------------
 
 // -- Fetch API version --
-let currentWeather = [];
+
 // fetch the current weather in BCN
 function weatherBalloon(cityID) {
   // open weather key
@@ -91,9 +98,7 @@ function drawWeather(d) {
   document.getElementById("weather_icon").innerHTML = `<img src="${icons}">`;
 }
 
-// Exercise 5
-
-const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
+// --------------------------------- Exercise 5 --------------------------------------------------
 
 async function getChuckJokes() {
   const response = await fetch(ChuckAPIUrl, {
@@ -116,4 +121,22 @@ function getRandomJoke() {
   let i = Math.floor(Math.random() * functionsArray.length);
 
   functionsArray[i]();
+}
+
+// ---------------------------------  LEVEL 3  ---------------------------------------------------
+
+// --------------------------------- Exercise 6 --------------------------------------------------
+
+// Switching blobs when the joke button is clicked
+let currentBlob = 1;
+function changeBackground() {
+  let blob = document.getElementById('blob');
+  blob.classList.remove('blob'+currentBlob)
+  currentBlob++
+  blob.classList.add('blob'+currentBlob);  
+  if (currentBlob == 7) {
+    blob.classList.remove('blob'+currentBlob)
+    currentBlob = 1
+    blob.classList.add('blob'+currentBlob); 
+  }
 }

@@ -17,55 +17,54 @@
   </head>
   <body>
     <div class="wrapper">
-      <!-- header -->
-      <header class="navbar justify-content-start p-4">
-        <div id="weather">
-          <div id="weather_icon"></div>
+      <div id="weather">
+        <div id="weather_icon"></div>
           <div id="description"></div>
           <div id="temp"></div>
-          <br />
-          <div id="location"></div>
-        </div>
-      </header>
-      <div class="container">
-        <div class="card text-center mt-5 p-4">
-          <div class="card-body">
-            <h1 class="card-title m-auto w-auto">Ready to laugh? 🤣</h1>
-            <p class="card-text m-5" id="jokesOutput"></p>
-            <div class="score-btn">
-              <div class="score-container">
-                <ul class="score-icons">
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-thumbs-o-down" onclick="setScore(1)"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-meh-o" onclick="setScore(2)"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa fa-thumbs-o-up" onclick="setScore(3)"></i
-                    ></a>
-                  </li>
-                </ul>
+        <div id="location"></div>
+      </div>
+      
+      <section>            
+        <div class="blob-container row mx-auto text-center">
+          <div id="blob" class="blob1 containerfluid row text-white">
+            <div class="card-body">
+              <h1 class="card-title m-auto w-auto">Ready to laugh? 🤣</h1>
+              <p class="card-text m-5" id="jokesOutput"></p>
+              <div class="score-btn">
+                <div class="score-container">
+                  <ul class="score-icons">
+                    <li>
+                      <a href="#"
+                        ><i class="fa fa-thumbs-o-down" onclick="setScore(1)"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa fa-meh-o" onclick="setScore(2)"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa fa-thumbs-o-up" onclick="setScore(3)"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <br />
-            <div class="main-btn">
-              <a
-                href="#"
-                class="btn btn-primary"
-                onclick="getRandomJoke()"
-                shadow
-                >Tell me a joke</a
-              >
+              <br />
+              <div class="main-btn">
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  onclick="getRandomJoke()"
+                  shadow
+                  >Tell me a joke</a
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </body>
 </html>
