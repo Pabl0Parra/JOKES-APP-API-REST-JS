@@ -7,7 +7,7 @@ const HTMLResponse = document.querySelector("#jokesOutput");
 let fetchedJoke = "";
 // empty [] to later push the jokes w/scores (Ex_3)
 const reportJokes = [];
-// empty [] to later
+// empty [] to later retrieve correct weather icon
 let currentWeather = [];
 // Chuck's Jokes API Url
 const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
