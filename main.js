@@ -121,5 +121,5 @@ function getRandomJoke() {
 
   functionsArray[i]();
 }
-// display a random joke at start
+// displays jokes at the beginning of the app
 getRandomJoke();
