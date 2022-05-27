@@ -10,20 +10,26 @@ body {
   );
 }
 
-#weather {
+header {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  width: 19rem;
+}
+
+#weather-container {
   display: flex;
   align-items: center;
   color: springgreen;
   padding-left: 4%;
   padding-top: 2%;
+  border-radius: 46px;
+  background: #774fb0;
+  box-shadow: 23px 23px 47px #5d3e89, -23px -23px 47px #9160d7;
 }
 
 #location {
-  margin-left: 0.8%;
+  margin-left: 3%;
   font-size: larger;
-}
-.header-size {
-  height: 50px;
 }
 
 #temp {
@@ -40,7 +46,7 @@ section {
   top: 0px;
   background-image: url(./img/MainBlob.svg);
   width: auto;
-  height: 800px;
+  height: 900px;
   background-size: cover;
   align-items: inherit;
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(35, 241, 224, 0.978));
@@ -151,4 +157,24 @@ section {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
+}
+
+#tiny-blob1 {
+  right: 240px;
+  position: absolute;
+  background-image: url("./img/tiny-blob1.svg");
+  width: 300px;
+  height: 240px;
+  background-size: cover;
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(35, 241, 224, 0.978));
+}
+#tiny-blob2 {
+  left: 30px;
+  bottom: -100px;
+  position: absolute;
+  background-image: url("./img/tiny-blob2.svg");
+  width: 138.07px;
+  height: 128.85px;
+  background-size: cover;
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(35, 241, 224, 0.978));
 }

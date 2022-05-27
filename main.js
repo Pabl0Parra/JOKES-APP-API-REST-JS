@@ -67,10 +67,11 @@ function weatherBalloon(cityID) {
     .then((data) => {
       console.log("weather array:", data);
       currentWeather = data;
-      drawWeather(data); // Call drawWeather
+      drawWeather(data); // Call drawWeather with weather data
     })
-    .catch((e) => {
-      console.log(e); // catch any errors
+    .catch((err) => {
+      console.log(`The API is not responding`); // catch any errors
+      console.error(err);
     });
 }
 
@@ -83,7 +84,7 @@ window.onload = () => {
 function drawWeather(d) {
   // display temperature in right format
   let celcius = Math.round(parseFloat(d.main.temp) - 273.15);
-  // get right icon from API
+  // get right weather icon from API for that moment
   let icons =
     "http://openweathermap.org/img/wn/" +
     currentWeather.weather[0].icon +
@@ -109,7 +110,7 @@ async function getChuckJokes() {
 
   HTMLResponse.innerHTML = norrisJoke.value;
 
-  fetchedChuckJoke = norrisJoke.value;
+  fetchedJoke = norrisJoke.value;
 }
 
 // choose a random joke between both API´s
