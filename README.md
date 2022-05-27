@@ -26,13 +26,13 @@ I will create a website of jokes, consuming data from a free API that does not r
 
 1. The API documentation to consume for a dad joke is as follows:
 
-[title](https://icanhazdadjoke.com/api)
+[Dad´s jokes API doc](https://icanhazdadjoke.com/api)
 
-- Call for a joke:
+*Call for a joke:
 
-[title](https://icanhazdadjoke.com/)
+[Dad´s jokes](https://icanhazdadjoke.com/)
 
-- Header to obtain the data in the format that interests us:
+*Header to obtain the data in the format that interests us:
 
 'Accept': 'application / json'
 
@@ -40,7 +40,7 @@ I will create a website of jokes, consuming data from a free API that does not r
 
 [Chuck Norris API doc](https://api.chucknorris.io/#!)
 
-- Call for a Chuck joke:
+*Call for a Chuck joke:
 
 [ChuckNorris jokes](https://api.chucknorris.io/jokes/random)
 
@@ -50,7 +50,7 @@ I will create a website of jokes, consuming data from a free API that does not r
 
 ---
 
-## Simply put, the API URL we enter in this project is where I will consume the data, and the header is how I want the data.
+### Simply put, the API url I enter in this project is where I will consume the data, and the header is how I want the data.
 
 ---
 
