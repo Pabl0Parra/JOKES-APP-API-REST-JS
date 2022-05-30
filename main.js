@@ -91,7 +91,7 @@ function drawWeather(d) {
     "@2x.png";
 
   // paint current temperature
-  document.getElementById("temp").innerHTML = celcius + "&deg;" + " " + " ";
+  document.getElementById("temp").innerHTML = celcius + "&deg;";
   // paint city name
   document.getElementById("location").innerHTML = d.name;
   // paint current weather icon
