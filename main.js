@@ -7,7 +7,7 @@ const HTMLResponse = document.querySelector("#jokesOutput");
 let fetchedJoke = "";
 // empty [] to later push the jokes w/scores (Ex_3)
 const reportJokes = [];
-// empty [] to later retrieve correct weather icon
+// empty [] to later retrieve correct weather icon from this variable
 let currentWeather = [];
 // Chuck's Jokes API Url
 const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
@@ -33,7 +33,7 @@ async function getJokes() {
 function setScore(value) {
   const currentDate = new Date();
   // convert date to ISO standards
-  let currentDateISO = currentDate.toISOString();
+  const currentDateISO = currentDate.toISOString();
   // push the following key/values into array
   reportJokes.push({
     joke: fetchedJoke,
@@ -53,13 +53,13 @@ function setScore(value) {
 // fetch the current weather in BCN
 function weatherBalloon(cityID) {
   // open weather key
-  let key = "8ef5c06696897286002b8e4054506ea8";
+  const weatherKey = "8ef5c06696897286002b8e4054506ea8";
   // API call
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?id=" +
       cityID +
       "&appid=" +
-      key
+      weatherKey
   )
     .then((resp) => {
       return resp.json(); // Convert data to json
@@ -83,10 +83,10 @@ window.onload = () => {
 // paint the weather in header
 function drawWeather(d) {
   // display temperature in right format
-  let celcius = Math.round(parseFloat(d.main.temp) - 273.15);
+  const celcius = Math.round(parseFloat(d.main.temp) - 273.15);
   // get right weather icon from API for that moment
-  let icons =
-    "http://openweathermap.org/img/wn/" +
+  const icons =
+    "https://openweathermap.org/img/wn/" +
     currentWeather.weather[0].icon +
     "@2x.png";
 
@@ -106,7 +106,7 @@ async function getChuckJokes() {
       Accept: "application/json",
     },
   });
-  norrisJoke = await response.json();
+  const norrisJoke = await response.json();
 
   HTMLResponse.innerHTML = norrisJoke.value;
 
@@ -117,7 +117,7 @@ async function getChuckJokes() {
 function getRandomJoke() {
   // [] w/both functions that can be called
   const functionsArray = [getJokes, getChuckJokes];
-  let i = Math.floor(Math.random() * functionsArray.length);
+  const i = Math.floor(Math.random() * functionsArray.length);
 
   functionsArray[i]();
 }
