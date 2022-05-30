@@ -26,11 +26,11 @@ We will create a website of jokes, consuming data from a free API that does not 
 
 1. The API documentation to consume for a dad joke is as follows:
 
-[title](https://icanhazdadjoke.com/api)
+[Dad´s jokes API doc](https://icanhazdadjoke.com/api)
 
 - Call for a joke:
 
-[title](https://icanhazdadjoke.com/)
+[Dad´s jokes](https://icanhazdadjoke.com/)
 
 - Header to obtain the data in the format that interests us:
 
