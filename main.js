@@ -53,13 +53,13 @@ function setScore(value) {
 // fetch the current weather in BCN
 function weatherBalloon(cityID) {
   // open weather key
-  const weatherKey = "8ef5c06696897286002b8e4054506ea8";
+  const WEATHER_KEY = "8ef5c06696897286002b8e4054506ea8";
   // API call
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?id=" +
       cityID +
       "&appid=" +
-      weatherKey
+      WEATHER_KEY
   )
     .then((resp) => {
       return resp.json(); // Convert data to json
