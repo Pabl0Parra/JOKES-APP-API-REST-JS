@@ -10,7 +10,7 @@ const reportJokes = [];
 // empty [] to later retrieve correct weather icon from this variable
 let currentWeather = [];
 // Chuck's Jokes API Url
-const ChuckAPIUrl = "https://api.chucknorris.io/jokes/random";
+const CHUCK_API_URL = "https://api.chucknorris.io/jokes/random";
 // ------------------------------- Exercise 1 --------------------------------------------------
 async function getJokes() {
   // API call
@@ -101,7 +101,7 @@ function drawWeather(d) {
 // --------------------------------- Exercise 5 --------------------------------------------------
 
 async function getChuckJokes() {
-  const response = await fetch(ChuckAPIUrl, {
+  const response = await fetch(CHUCK_API_URL, {
     headers: {
       Accept: "application/json",
     },
@@ -117,9 +117,9 @@ async function getChuckJokes() {
 function getRandomJoke() {
   // [] w/both functions that can be called
   const functionsArray = [getJokes, getChuckJokes];
-  const i = Math.floor(Math.random() * functionsArray.length);
+  const randomJoke = Math.floor(Math.random() * functionsArray.length);
 
-  functionsArray[i]();
+  functionsArray[randomJoke]();
 }
 // displays jokes at the beginning of the app
 getRandomJoke();
